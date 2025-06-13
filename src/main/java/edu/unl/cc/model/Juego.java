@@ -20,7 +20,7 @@ public class Juego {
                 case 1:
                     if (jugador == x) {
                         System.out.println("EMPATE AMBOS SON DE JUEGO PIEDRA NINGUN PUNTO ");
-                    } else if (x == 2 ) {
+                    } else if (x == 2) {
                         rival++;
                         System.out.println("JUGADOR PIERDE PAPEL VENCE A PIEDRA PUNTO PARA EL RIVAL");
                     } else {
@@ -64,4 +64,28 @@ public class Juego {
             }
         }
     }
+
+    public int calcularMCM(int num1, int num2) {
+        int max = num1 * num2;
+
+        for (int i = Math.max(num1, num2); i <= max; i++) {
+            if (i % num1 == 0 && i % num2 == 0) {
+                return i;
+            }
+        }
+        return max;
+    }
+
+    public int raizCubica(int numero) {
+        int result = 0;
+        while (result * result * result < numero) {
+            result++;
+        }
+        if (result * result * result == numero) {
+            return result;
+        } else {
+            return -1;
+        }
+    }
+
 }
